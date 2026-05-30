@@ -16,3 +16,8 @@
 !/publick_case_sudy/README.md
 !/publick_case_sudy/final_submission_public_redacted.txt
 !/publick_case_sudy/assets/H1-3493_TouristOuting-553_2.jpg.webp
+
+# Keep this public command guide visible to Git.
+!/tips/
+/tips/*
+!/tips/portfolio_repo_command_guide.md
