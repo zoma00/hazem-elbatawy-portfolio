@@ -1,0 +1,64 @@
+Title: Broken Access Control (IDOR/BOLA) Allows Cross-Account Privacy State Change
+
+Program: Private bug bounty program (redacted)
+Asset: Web application account settings surface (redacted)
+Vulnerability Type: Broken Access Control (IDOR/BOLA)
+Affected Endpoint: Redacted (state-changing privacy settings endpoint)
+
+Summary
+An authenticated user was able to modify another user's privacy/sharing configuration by tampering object identifiers in a state-changing request. The server accepted cross-account object references from client-controlled fields and processed the update.
+
+The behavior was reproduced after fresh session rotation to rule out stale-session artifacts. Testing used two controlled accounts owned by the researcher.
+
+Impact
+An attacker with a valid account could change another user's privacy setting without authorization.
+
+This is a horizontal privilege escalation and unauthorized state change on another user's account-scoped object.
+
+Steps To Reproduce
+1. Prepare two controlled accounts:
+   - Attacker account (authenticated)
+   - Victim account (separate account-scoped object)
+2. Capture a legitimate privacy update request as attacker.
+3. Replay request in a testing tool.
+4. Keep attacker authentication context unchanged.
+5. Modify only object identifiers to victim values in path/body.
+6. Submit a valid privacy-setting mutation.
+7. Observe request is accepted and success signal is returned.
+8. Verify victim setting was changed.
+9. Verify attacker's own setting does not explain observed victim change.
+
+Proof Of Concept (Sanitized)
+Request:
+- Auth context: attacker session
+- Object reference fields: modified to victim object identifier
+- Action: privacy setting update
+
+Response:
+- Success-like redirect/status accepted by server
+- Success flash/message indicator present
+
+Expected Behavior
+Server must enforce object-level authorization and reject writes when authenticated identity does not own the targeted object.
+
+Actual Behavior
+Server processed a write with attacker authentication while accepting victim object identifiers.
+
+Remediation
+1. Enforce server-side object ownership checks on every write endpoint.
+2. Derive writable object identity from authenticated session context only.
+3. Ignore client-supplied object identifiers for authorization, or strictly validate ownership match.
+4. Add audit logging and alerting for cross-account object ID mismatches.
+5. Add negative authorization tests in CI for cross-account mutations.
+
+Attachment Guidance For Public Portfolio
+1. Use only fully sanitized diagrams or pseudo-requests.
+2. Do not include target names, endpoint paths, report IDs, or raw logs.
+3. Do not include session, CSRF, tracking, or any real token/cookie values.
+4. Keep screenshots generic and non-attributable.
+
+Severity Suggestion
+Medium to High (horizontal unauthorized write on another user's privacy-related object).
+
+Disclosure Note
+This document is intentionally redacted for public portfolio use and excludes program identifiers, endpoint specifics, report metadata, and exploit-enabling details.

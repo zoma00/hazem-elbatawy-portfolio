@@ -7,3 +7,12 @@
 # Keep the public portfolio boilerplate visible to Git.
 !/github_pages_boilerplate/
 !/github_pages_boilerplate/**
+
+# Keep selected public case-study portfolio material visible to Git.
+!/publick_case_sudy/
+!/publick_case_sudy/assets/
+/publick_case_sudy/.git.removed-from-nested-repo/
+/publick_case_sudy/assets/*
+!/publick_case_sudy/README.md
+!/publick_case_sudy/final_submission_public_redacted.txt
+!/publick_case_sudy/assets/H1-3493_TouristOuting-553_2.jpg.webp
