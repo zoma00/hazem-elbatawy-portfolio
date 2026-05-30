@@ -1,0 +1,9 @@
+# Ignore local/private workspace content by default.
+/*
+
+# Keep this ignore file tracked.
+!/.gitignore
+
+# Keep the public portfolio boilerplate visible to Git.
+!/github_pages_boilerplate/
+!/github_pages_boilerplate/**
