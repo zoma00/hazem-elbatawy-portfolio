@@ -14,8 +14,6 @@
 
 This repository contains public-safe portfolio material for my work as a Full-Stack Developer and Security Researcher based in Cairo, Egypt.
 
-My development work focuses on React/TypeScript frontends, FastAPI, Django and Laravel backends, PostgreSQL/MySQL databases, Docker, Linux servers, Nginx, AWS EC2, GitHub Pages, and GitHub Actions.
-
 My security research focuses on scoped web and API testing, recon, attack-surface mapping, access-control validation, reproducible evidence, and responsible disclosure.
 
 This specific public case study remains redacted because it represents an access-control vulnerability class (IDOR/BOLA) and must stay compliant with disclosure boundaries.
