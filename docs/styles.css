@@ -214,6 +214,13 @@ h2 {
   color: var(--muted);
 }
 
+.role-meta {
+  color: var(--accent-2);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.86rem;
+  margin-bottom: 10px;
+}
+
 .case-card p {
   margin-bottom: 10px;
 }
@@ -270,6 +277,20 @@ div.proof-item {
   margin: 8px 0;
 }
 
+.project-link {
+  margin-top: 12px;
+}
+
+.project-link a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-link a:hover {
+  text-decoration: underline;
+}
+
 .contact {
   border-color: #35637f;
   background: linear-gradient(170deg, rgba(17, 37, 50, 0.95), rgba(11, 24, 33, 0.8));
@@ -277,7 +298,7 @@ div.proof-item {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 10px;
   margin-top: 14px;
 }
