@@ -297,20 +297,26 @@ div.proof-item {
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
   margin-top: 14px;
 }
 
 .contact-grid a {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  max-width: 100%;
   color: var(--text);
   text-decoration: none;
   border: 1px solid var(--line);
   background: rgba(19, 40, 54, 0.65);
-  padding: 10px 12px;
+  min-height: 56px;
+  padding: 12px 14px;
   border-radius: 10px;
-  text-align: center;
+  text-align: left;
+  white-space: nowrap;
   line-height: 1.45;
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -341,9 +347,16 @@ div.proof-item {
 
 @media (max-width: 860px) {
   .cards,
-  .proof-grid,
-  .contact-grid {
+  .proof-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    flex-direction: column;
+  }
+
+  .contact-grid a {
+    white-space: normal;
   }
 
   .section,
