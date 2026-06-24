@@ -4,6 +4,11 @@
 # Keep this ignore file tracked.
 !/.gitignore
 
+# Keep GitHub Actions workflows visible to Git.
+!/.github/
+!/.github/workflows/
+!/.github/workflows/**
+
 # Keep the public portfolio boilerplate visible to Git.
 !/github_pages_boilerplate/
 !/github_pages_boilerplate/**
