@@ -66,13 +66,13 @@ This repository contains:
 
 ## Deployment Architecture
 
-```mermaid
-flowchart LR
-    Push[Push to main] --> Actions[GitHub Actions]
-    Actions --> Checkout[Checkout repository]
-    Checkout --> Prepare[Copy github_pages_boilerplate to _site]
-    Prepare --> Artifact[Upload Pages artifact]
-    Artifact --> Pages[Deploy to GitHub Pages]
+```text
+Push to main
+    → GitHub Actions workflow
+    → Check out the repository
+    → Copy github_pages_boilerplate/ into _site/
+    → Upload the GitHub Pages artifact
+    → Deploy the live portfolio
 ```
 
 The deployment workflow publishes the contents of `github_pages_boilerplate/`. Its nested `docs/` directory is intentionally excluded from the Pages artifact and remains repository-only supporting material.
