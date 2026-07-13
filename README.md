@@ -36,7 +36,7 @@ I build full-stack web systems and backend APIs, with a focus on integration wor
 
 I founded [FolioVista Books](https://www.foliovistabooks.com/) as a digital publishing company for digital books, practical guides, manuals, and free sample chapters.
 
-FolioVista Books is my current live production platform and demonstrates product ownership, technical publishing, public deployment, security operations, and direct customer communication.
+FolioVista Books is my current live production platform and demonstrates product ownership, technical publishing, public deployment, production operations, and direct customer communication.
 
 ## Selected Work
 
