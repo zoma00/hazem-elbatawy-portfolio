@@ -15,7 +15,7 @@
 
 I build and integrate secure, production-ready backend APIs and full-stack web systems.
 
-My work focuses on connecting services into reliable products using FastAPI, Django, Laravel, React, TypeScript, PostgreSQL, Docker, AWS, and Linux. A security engineer's perspective is built into how I work, with particular attention to authentication, authorization, access control, and data exposure.
+I build full-stack web systems and backend APIs, with a focus on integration work that connects services into reliable, production-ready products. A security engineer's perspective is built into how I work, so what I ship holds up to real-world access-control and data-exposure risks.
 
 ## Live Portfolio
 
